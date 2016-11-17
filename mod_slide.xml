@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="3.1" client="site">
+	<name>mod_slide</name>
+	<author>René Alain Erichsen/BUCHS AS</author>
+	<creationDate>November 2016</creationDate>
+	<copyright>Copyright (C) 2016 BUCHS AS. All rights reserved.</copyright>
+	<license>GNU General Public License version 2 or later</license>
+	<authorEmail>re@buchs.dk</authorEmail>
+	<authorUrl>www.buchs.dk</authorUrl>
+	<version>1.0.0</version>
+	<description>MOD_SLIDE_XML_DESCRIPTION</description>
+
+	<files>
+		<filename module="mod_slide">mod_slide.php</filename>
+		<filename module="mod_slide">mod_slide.xml</filename>
+		<folder>tmpl</folder>
+	</files>
+
+	<languages>
+		<language tag="en-GB">language/en-GB/en-GB.mod_slide.ini</language>
+		<language tag="en-GB">language/en-GB/en-GB.mod_slide.sys.ini</language>
+		<language tag="da-DK">language/da-DK/da-DK.mod_slide.ini</language>
+		<language tag="da-DK">language/da-DK/da-DK.mod_slide.sys.ini</language>
+	</languages>
+
+	<updateservers>
+		<server type="extension" priority="1" name="Slide for image carousel updates">https://raw.githubusercontent.com/Buchs-Dev/mod_slide/master/mod_slide_updates.xml</server>
+	</updateservers>
+
+	<config>
+		<fields name="params">
+			<fieldset name="slide" label="Slide">
+				<field name="backgroundimage" type="media"
+					label="MOD_SLIDE_FIELD_BACKGROUNDIMAGE_LABEL" description="MOD_SLIDE_BACKGROUNDIMAGE_FIELD_LOGO_DESC" />
+				<field
+					name="maxwidth_lg"
+					type="text"
+					default="2048"
+					label="MOD_SLIDE_FIELD_MAXWIDTH_LG_LABEL"
+					description="MOD_SLIDE_FIELD_MAXWIDTH_DESC"
+					filter="INT" />
+				<field
+					name="maxwidth_md"
+					type="text"
+					default="1536"
+					label="MOD_SLIDE_FIELD_MAXWIDTH_MD_LABEL"
+					description="MOD_SLIDE_FIELD_MAXWIDTH_DESC"
+					filter="INT" />
+				<field
+					name="maxwidth_sm"
+					type="text"
+					default="1024"
+					label="MOD_SLIDE_FIELD_MAXWIDTH_SM_LABEL"
+					description="MOD_SLIDE_FIELD_MAXWIDTH_DESC"
+					filter="INT" />
+				<field
+					name="maxwidth_xs"
+					type="text"
+					default="640"
+					label="MOD_SLIDE_FIELD_MAXWIDTH_XS_LABEL"
+					description="MOD_SLIDE_FIELD_MAXWIDTH_DESC"
+					filter="INT" />
+				<field
+					name="sizes"
+					type="text"
+					default=""
+					label="MOD_SLIDE_FIELD_SIZES_LABEL"
+					description="MOD_SLIDE_FIELD_SIZES_DESC" />
+				<field
+					name="relheight"
+					type="integer"
+					default="1"
+					label="MOD_SLIDE_FIELD_RELHEIGHT"
+					description="MOD_SLIDE_FIELD_RELHEIGHT_DESC"
+					first="1"
+					last="100"
+					step="1" />
+				<field
+					name="relwidth"
+					type="integer"
+					default="5"
+					label="MOD_SLIDE_FIELD_RELWIDTH"
+					description="MOD_SLIDE_FIELD_RELWIDTH_DESC"
+					first="1"
+					last="100"
+					step="1" />
+				<field
+					name="url"
+					type="text"
+					default=""
+					label="MOD_SLIDE_FIELD_LINK_LABEL"
+					description="MOD_SLIDE_FIELD_LINK_DESC" />
+				<field
+					name="readmore"
+					type="radio"
+					class="btn-group btn-group-yesno"
+					default="0"
+					label="MOD_SLIDE_FIELD_SHOW_READMORE"
+					description="MOD_SLIDE_FIELD_SHOW_READMORE_DESC">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field
+					name="blackfade"
+					type="radio"
+					class="btn-group btn-group-yesno"
+					default="0"
+					label="MOD_SLIDE_FIELD_BLACKFADE"
+					description="MOD_SLIDE_FIELD_BLACKFADE_DESC">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+			</fieldset>			
+			<fieldset name="options" label="COM_MODULES_BASIC_FIELDSET_LABEL">
+				<field
+					name="prepare_content"
+					type="radio"
+					class="btn-group btn-group-yesno"
+					label="MOD_SLIDE_FIELD_PREPARE_CONTENT_LABEL"
+					description="MOD_SLIDE_FIELD_PREPARE_CONTENT_DESC"
+					default="0">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+			</fieldset>
+			<fieldset
+				name="advanced">
+				<field
+					name="layout"
+					type="modulelayout"
+					label="JFIELD_ALT_LAYOUT_LABEL"
+					description="JFIELD_ALT_MODULE_LAYOUT_DESC" />
+				<field
+					name="moduleclass_sfx"
+					type="textarea" rows="3"
+					label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+					description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
+				<field
+					name="cache"
+					type="list"
+					default="1"
+					label="COM_MODULES_FIELD_CACHING_LABEL"
+					description="COM_MODULES_FIELD_CACHING_DESC">
+					<option value="1">JGLOBAL_USE_GLOBAL</option>
+					<option value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+				</field>
+
+				<field
+					name="cache_time"
+					type="text"
+					default="900"
+					label="COM_MODULES_FIELD_CACHE_TIME_LABEL"
+					description="COM_MODULES_FIELD_CACHE_TIME_DESC" />
+				<field
+					name="cachemode"
+					type="hidden"
+					default="static">
+					<option value="static"></option>
+				</field>
+			</fieldset>
+		</fields>
+	</config>
+</extension>
