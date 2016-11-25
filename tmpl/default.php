@@ -8,17 +8,20 @@
 
 defined('_JEXEC') or die;
 
-$url = $params->get('url');
-$image = $params->get('backgroundimage');
+$base        = JURI::base(true);
+
+// Get params
+$blackfade   = $params->get('blackfade');
+$image       = $params->get('backgroundimage');
 $maxwidth_lg = $params->get('maxwidth_lg');
 $maxwidth_md = $params->get('maxwidth_md');
 $maxwidth_sm = $params->get('maxwidth_sm');
 $maxwidth_xs = $params->get('maxwidth_xs');
-$relwidth = $params->get('relwidth');
-$relheight = $params->get('relheight');
-$readmore = $params->get('readmore');
-$blackfade = $params->get('blackfade');
-$sizes = $params->get('sizes');
+$readmore    = $params->get('readmore');
+$relheight   = $params->get('relheight');
+$relwidth    = $params->get('relwidth');
+$sizes       = $params->get('sizes');
+$url         = $params->get('url');
 ?>
 
 
@@ -28,7 +31,7 @@ $sizes = $params->get('sizes');
 	<?php endif; ?>
 	<?php if ($image) : ?>
 	<div class="image-wrapper">
-		<img<?php if ($blackfade) echo ' class="faded"'; ?> src="/slir/w<?php echo $maxwidth_md; ?>-c<?php echo $relwidth; ?>x<?php echo $relheight; ?>/<?php echo $image; ?>" srcset="/slir/w<?php echo $maxwidth_lg; ?>-c<?php echo $relwidth; ?>x<?php echo $relheight; ?>/<?php echo $image; ?> <?php echo $maxwidth_lg; ?>w, /slir/w<?php echo $maxwidth_md; ?>-c<?php echo $relwidth; ?>x<?php echo $relheight; ?>/<?php echo $image; ?> <?php echo $maxwidth_md; ?>w, /slir/w<?php echo $maxwidth_sm; ?>-c<?php echo $relwidth; ?>x3/<?php echo $image; ?> <?php echo $maxwidth_sm; ?>w, /slir/w<?php echo $maxwidth_xs; ?>-c<?php echo $relwidth; ?>x3/<?php echo $image; ?> <?php echo $maxwidth_xs; ?>w" <?php if ($sizes) echo "sizes=\"$sizes\"" ; ?> alt="">
+		<img<?php if ($blackfade) echo ' class="faded"'; ?>src="<?php echo $base; ?>slir/w<?php echo $maxwidth_md; ?>-c<?php echo $relwidth; ?>x<?php echo $relheight; ?>/<?php echo $image; ?>" srcset="<?php echo $base; ?>slir/w<?php echo $maxwidth_lg; ?>-c<?php echo $relwidth; ?>x<?php echo $relheight; ?>/<?php echo $image; ?> <?php echo $maxwidth_lg; ?>w, <?php echo $base; ?>slir/w<?php echo $maxwidth_md; ?>-c<?php echo $relwidth; ?>x<?php echo $relheight; ?>/<?php echo $image; ?> <?php echo $maxwidth_md; ?>w, <?php echo $base; ?>slir/w<?php echo $maxwidth_sm; ?>-c<?php echo $relwidth; ?>x3/<?php echo $image; ?> <?php echo $maxwidth_sm; ?>w, <?php echo $base; ?>slir/w<?php echo $maxwidth_xs; ?>-c<?php echo $relwidth; ?>x3/<?php echo $image; ?> <?php echo $maxwidth_xs; ?>w" <?php if ($sizes) echo "sizes=\"$sizes\"" ; ?> alt="">
 	</div>
 	<?php endif;?>
 	<?php if ($module->content) : ?>
