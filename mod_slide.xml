@@ -71,7 +71,7 @@
 				<field
 					name="relheight"
 					type="integer"
-					default="1"
+					default="2"
 					label="MOD_SLIDE_FIELD_RELHEIGHT"
 					description="MOD_SLIDE_FIELD_RELHEIGHT_DESC"
 					first="1"
