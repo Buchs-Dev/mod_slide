@@ -93,6 +93,12 @@
 					label="MOD_SLIDE_FIELD_LINK_LABEL"
 					description="MOD_SLIDE_FIELD_LINK_DESC" />
 				<field
+					name="youtube"
+					type="text"
+					default=""
+					label="MOD_SLIDE_FIELD_YOUTUBE"
+					description="MOD_SLIDE_FIELD_YOUTUBE_DESC" />
+				<field
 					name="readmore"
 					type="radio"
 					class="btn-group btn-group-yesno"
