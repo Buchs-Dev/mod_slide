@@ -15,15 +15,9 @@
 	<files>
 		<filename module="mod_slide">mod_slide.php</filename>
 		<filename module="mod_slide">mod_slide.xml</filename>
+		<folder>language</folder>
 		<folder>tmpl</folder>
 	</files>
-
-	<languages>
-		<language tag="en-GB">language/en-GB/en-GB.mod_slide.ini</language>
-		<language tag="en-GB">language/en-GB/en-GB.mod_slide.sys.ini</language>
-		<language tag="da-DK">language/da-DK/da-DK.mod_slide.ini</language>
-		<language tag="da-DK">language/da-DK/da-DK.mod_slide.sys.ini</language>
-	</languages>
 
 	<updateservers>
 		<server type="extension" priority="1" name="Slide for image carousel updates">https://raw.githubusercontent.com/Buchs-Dev/mod_slide/master/mod_slide_updates.xml</server>
